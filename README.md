@@ -2,6 +2,11 @@
 
 A full-stack college notes assistant where users can sign up, log in, upload PDF notes, and ask questions from the uploaded notes. The backend processes PDF files, stores embeddings in Pinecone, and answers user questions using Hugging Face inference.
 
+## Deployed URLs
+
+- Frontend: https://college-notes-rag.vercel.app
+- Backend: https://college-notes-rag-i10d.onrender.com
+
 ## Project Note
 
 - Backend: completely built by me.

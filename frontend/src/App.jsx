@@ -24,7 +24,7 @@ const defaultMessages = [
     content: "Upload notes on the left, then ask anything from that file.",
   },
 ];
-const API_BASE_URL = import.meta.env.VITE_API_URL || "";
+const API_BASE_URL = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
 
 const api = axios.create({
   baseURL: `${API_BASE_URL}/myRag/note`,

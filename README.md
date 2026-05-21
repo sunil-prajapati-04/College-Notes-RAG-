@@ -74,6 +74,7 @@ Create a `.env` file inside the `backend` folder.
 PORT=8080
 MONGODBURL=your_mongodb_url
 SCERECTKEY=your_jwt_secret
+CLIENT_URL=http://localhost:5173
 
 PINECONEDB_APIKEY=your_pinecone_api_key
 HF_APIKEY=your_huggingface_api_key
@@ -99,6 +100,8 @@ For deployment, replace this with your deployed backend URL:
 ```env
 VITE_API_URL=https://your-backend-url.com
 ```
+
+Also set `CLIENT_URL` in the backend `.env` to your deployed frontend URL so CORS allows requests from the frontend.
 
 If `VITE_API_URL` is empty, the frontend uses relative API paths and local Vite proxy can handle `/myRag` requests during development.
 

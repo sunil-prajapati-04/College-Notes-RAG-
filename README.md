@@ -86,6 +86,22 @@ CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 ```
 
+## Frontend Environment Variables
+
+Create a `.env` file inside the `frontend` folder when deploying or when you want to call the backend directly.
+
+```env
+VITE_API_URL=http://localhost:8080
+```
+
+For deployment, replace this with your deployed backend URL:
+
+```env
+VITE_API_URL=https://your-backend-url.com
+```
+
+If `VITE_API_URL` is empty, the frontend uses relative API paths and local Vite proxy can handle `/myRag` requests during development.
+
 ## API Routes
 
 Base backend URL:
@@ -160,12 +176,14 @@ http://localhost:5173
 The frontend uses Axios with these base URLs:
 
 ```js
+const API_BASE_URL = import.meta.env.VITE_API_URL || "";
+
 const api = axios.create({
-  baseURL: "/myRag/note",
+  baseURL: `${API_BASE_URL}/myRag/note`,
 });
 
 const authApi = axios.create({
-  baseURL: "/myRag/auth",
+  baseURL: `${API_BASE_URL}/myRag/auth`,
 });
 ```
 

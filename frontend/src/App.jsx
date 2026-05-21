@@ -24,14 +24,15 @@ const defaultMessages = [
     content: "Upload notes on the left, then ask anything from that file.",
   },
 ];
+const API_BASE_URL = import.meta.env.VITE_API_URL || "";
 
 const api = axios.create({
-  baseURL: "/myRag/note",
+  baseURL: `${API_BASE_URL}/myRag/note`,
   withCredentials: true,
 });
 
 const authApi = axios.create({
-  baseURL: "/myRag/auth",
+  baseURL: `${API_BASE_URL}/myRag/auth`,
   withCredentials: true,
 });
 
